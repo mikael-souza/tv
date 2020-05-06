@@ -1,0 +1,55 @@
+
+<html>
+
+<head>
+
+<script src="http://ssl.p.jwpcdn.com/player/v/7.6.1/jwplayer.js"></script>
+
+<script src="http://cdn.streamroot.io/release/stable/jw/7.6.1/provider.js"></script>
+
+</head>
+
+<body>
+
+<div id="streamroot"></div>
+
+<script>
+
+  jwplayer.key = "ftjvkP4Hyf7gB3Y/mnYza01fCLcz36eSFagTl5+SZkk="
+
+  jwplayer('streamroot').setup({
+	  
+	  title: "Caikron Tecnologia",
+
+    playlist: {
+
+      image: "logoric.png",
+
+      sources: [
+
+        { file: "rtmp://str.portalcultura.com.br/funtelpa/tv_funtelpa" }
+
+      ],
+
+    },
+
+    autostart: true,
+
+    title: 'Caikron Tecnologia',
+	width:'100%',
+	height:'100%',
+	aspectratio:'16:9',
+
+    p2pConfig:{ streamrootKey: "YOUR_APP_CLIENTID" },
+
+    hlsjsConfig:{}, // possible hls.js options
+
+    srDashConfig:{} // possible streamroot-dash options
+
+  });
+
+</script>
+
+</body>
+
+</html>
