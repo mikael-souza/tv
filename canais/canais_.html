@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>TV Online</title>
+     <link rel='stylesheet' href='./canais.css'>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/combine/npm/slick-carousel@1.7.1/slick/slick.css,npm/slick-carousel@1.7.1/slick/slick-theme.css'>
+  
+<style>
+body {
+  background-color: #000000;
+}
+
+/*
+ * Slick Theme
+ * ************************************************************
+ */
+/* Slider */
+.slick-loading .slick-list {
+  background: #fff url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/ajax-loader.gif") center center no-repeat;
+}
+
+/* Icons */
+@font-face {
+  font-family: "slick";
+  src: url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/fonts/slick.eot");
+  src: url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/fonts/slick.eot?#iefix") format("embedded-opentype"), url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/fonts/slick.woff") format("woff"), url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/fonts/slick.ttf") format("truetype"), url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/fonts/slick.svg#slick") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* ************************************************************* */
+.js .cSlider--single > div:nth-child(1n + 2) {
+  display: none;
+}
+.js .cSlider--single.slick-initialized > div:nth-child(1n + 2) {
+  display: block;
+}
+
+iframe {
+  position: relative;
+  background-color: #f0f0f0;
+  text-align: center;
+/*  top: 100%;
+  left: 20%;*/
+}
+
+h2 {
+  position: relative;
+  font-size: 2.25rem;
+  background-color: #f0f0f0;
+  color: #3498db;
+  text-align: center;
+  padding: 2%;
+  margin: 0.5rem;
+}
+.cSlider--single h2 {
+  content: "";
+  line-height: 10rem;
+  background-color: #000000;
+}
+.cSlider--nav h2::before {
+  content: "";
+  display: block;
+  padding-top: 75%;
+}
+.slick-slide.is-active h2 {
+  color: #c00;
+  background-color: #fff;
+}
+
+.cSlider--nav .slick-slide {
+  cursor: pointer;
+  background-color: #000000;
+}
+.cSlider--nav span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="row">
+	<div class="column small-11 small-centered">
+		<h1 class="text-center"> </h1>
+		<div class="cSlider cSlider--single">
+			<div class="cSlider__item"><h2><iframe id="iframeid" width=640 height=340 src="https://megafilmeshd50.top/canais/deko.php?canal=space" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></h2></iframe></div>
+			<!--<div class="cSlider__item"><h2>Slide 2</h2></div>
+			<div class="cSlider__item"><h2>Slide 3</h2></div>
+			<div class="cSlider__item"><h2>Slide 4</h2></div>
+			<div class="cSlider__item"><h2>Slide 5</h2></div>
+			<div class="cSlider__item"><h2>Slide 6</h2></div>
+			<div class="cSlider__item"><h2>Slide 7</h2></div>
+			<div class="cSlider__item"><h2>Slide 8</h2></div>
+			<div class="cSlider__item"><h2>Slide 9</h2></div>
+			<div class="cSlider__item"><h2>Slide 10</h2></div>-->
+		</div>
+		<div class="cSlider cSlider--nav">
+			<div class="cSlider__item"><h2><span><input type="button" id="space" />1</span></h2></div>
+			<div class="cSlider__item"><h2><span><input type="button" id="universal" />2</span></h2></div>
+			<div class="cSlider__item"><h2><span><input type="button" id="mtv" />3</span></h2></div>
+			<div class="cSlider__item"><h2><span><input type="button" id="syfy" />4</span></h2></div>
+			<div class="cSlider__item"><h2><span>5</span></h2></div>
+			<div class="cSlider__item"><h2><span>6</span></h2></div>
+			<div class="cSlider__item"><h2><span>7</span></h2></div>
+			<div class="cSlider__item"><h2><span>8</span></h2></div>
+			<div class="cSlider__item"><h2><span>9</span></h2></div>
+			<div class="cSlider__item"><h2><span>10</span></h2></div>
+		</div>
+	</div>
+</div>
+      <script src='./canais.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick.js'></script>
+      <script id="rendered-js" >
+document.documentElement.classList.add('js');
+
+/// ----------------------------
+
+const $rootSingle = $('.cSlider--single');
+const $rootNav = $('.cSlider--nav');
+
+$rootSingle.slick({
+  slide: '.cSlider__item',
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  refresh: true,
+  arrows: true,
+  fade: false,
+  adaptiveHeight: true,
+  infinite: false,
+  useTransform: true,
+  speed: 400,
+  cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)' });
+
+
+$rootNav.on('init', function (event, slick) {
+  $(this).find('.slick-slide.slick-current').addClass('is-active');
+}).
+slick({
+  slide: '.cSlider__item',
+  slidesToShow: 5,
+  slidesToScroll: 5,
+  dots: false,
+  focusOnSelect: true,
+  infinite: false,
+  responsive: [{
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 5,
+      slidesToScroll: 5 } },
+
+  {
+    breakpoint: 640,
+    settings: {
+      slidesToShow: 4,
+      slidesToScroll: 4 } },
+
+  {
+    breakpoint: 420,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 3 } }] });
+
+
+
+
+$rootSingle.on('afterChange', function (event, slick, currentSlide) {
+  $rootNav.slick('slickGoTo', currentSlide);
+  $rootNav.find('.slick-slide.is-active').removeClass('is-active');
+  $rootNav.find('.slick-slide[data-slick-index="' + currentSlide + '"]').addClass('is-active');
+});
+
+$rootNav.on('click', '.slick-slide', function (event) {
+  event.preventDefault();
+  var goToSingleSlide = $(this).data('slick-index');
+
+  $rootSingle.slick('slickGoTo', goToSingleSlide);
+});
+
+    </script>
+<!--<script>
+function reload() {
+    document.getElementById('iframeid').src="https://megafilmeshd50.top/canais/deko.php?canal=space";
+} space.onclick = reload;
+</script>-->
+  
+
+</body>
+
+</html>
+
