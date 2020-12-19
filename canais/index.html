@@ -1,0 +1,133 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+  <title>TV Online</title>
+  
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation-float.min.css'>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/combine/npm/slick-carousel@1.7.1/slick/slick.css,npm/slick-carousel@1.7.1/slick/slick-theme.css'>
+<link rel='stylesheet' href='./css/estilo.css'>
+
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="row">
+	<div class="column small-11 small-centered">
+		<h1 class="text-center">TV Online</h1>
+		<div class="cSlider cSlider--single">
+			<div class="cSlider__item"><h3><iframe id="iframe1" width=640 height=340 src="https://megafilmeshd50.top/canais/deko.php?canal=space" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></h3></div>
+			<div class="cSlider__item"><h3><iframe id="iframe2" width=640 height=340 src="https://megafilmeshd50.top/canais/deko.php?canal=universal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></h3></div>
+			<div class="cSlider__item"><h3><iframe id="iframe3" width=640 height=340 src="https://megafilmeshd50.top/canais/deko.php?canal=mtv" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></h3></div>
+			<div class="cSlider__item"><h3><iframe id="iframe4" width=640 height=340 src="https://megafilmeshd50.top/canais/deko.php?canal=syfy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></h3></div>
+		</div>
+		<div class="cSlider cSlider--nav">
+			<div class="cSlider__item"><h2><span id="space">1</span></h2></div>
+			<div class="cSlider__item"><h2><span id="universal">2</span></h2></div>
+			<div class="cSlider__item"><h2><span id="mtv">3</span></h2></div>
+			<div class="cSlider__item"><h2><span id="syfy">4</span></h2></div>
+			<div class="cSlider__item"><h2><span>5</span></h2></div>
+			<div class="cSlider__item"><h2><span>6</span></h2></div>
+			<div class="cSlider__item"><h2><span>7</span></h2></div>
+			<div class="cSlider__item"><h2><span>8</span></h2></div>
+			<div class="cSlider__item"><h2><span>9</span></h2></div>
+			<div class="cSlider__item"><h2><span>10</span></h2></div>
+		</div>
+	</div>
+</div>
+
+    <script src="./canais.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/slick-carousel@1.7.1/slick/slick.js'></script>
+      <script id="rendered-js" >
+document.documentElement.classList.add('js');
+
+/// ----------------------------
+
+const $rootSingle = $('.cSlider--single');
+const $rootNav = $('.cSlider--nav');
+
+$rootSingle.slick({
+  slide: '.cSlider__item',
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: false,
+  adaptiveHeight: true,
+  infinite: false,
+  useTransform: true,
+  speed: 400,
+  cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)' });
+
+
+$rootNav.on('init', function (event, slick) {
+  $(this).find('.slick-slide.slick-current').addClass('is-active');
+}).
+slick({
+  slide: '.cSlider__item',
+  slidesToShow: 7,
+  slidesToScroll: 7,
+  dots: false,
+  focusOnSelect: false,
+  infinite: false,
+  responsive: [{
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 5,
+      slidesToScroll: 5 } },
+
+  {
+    breakpoint: 640,
+    settings: {
+      slidesToShow: 4,
+      slidesToScroll: 4 } },
+
+  {
+    breakpoint: 420,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 3 } }] });
+
+
+
+
+$rootSingle.on('afterChange', function (event, slick, currentSlide) {
+  $rootNav.slick('slickGoTo', currentSlide);
+  $rootNav.find('.slick-slide.is-active').removeClass('is-active');
+  $rootNav.find('.slick-slide[data-slick-index="' + currentSlide + '"]').addClass('is-active');
+});
+
+$rootNav.on('click', '.slick-slide', function (event) {
+  event.preventDefault();
+  var goToSingleSlide = $(this).data('slick-index');
+
+  $rootSingle.slick('slickGoTo', goToSingleSlide);
+});
+
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
+
