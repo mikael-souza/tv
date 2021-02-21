@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>NewsMax</title>
+    <body marginheight="0" topmargin="0" vspace="0" marginwidth="0" leftmargin="0" hspace="0" style="background-color: #000000; margin:0; padding:0"><br><center>
+	<div id="neusmax"></div>
+        <video id=example-video width=640 height=360 class="video-js vjs-default-skin" controls autoplay="true" muted preload title="NeusMax" poster="https://2.bp.blogspot.com/-W5XQpWaMCcw/WsvLqN-Y9BI/AAAAAAABGRU/LtSW-kOkto0HHMe2lpHiB5ENdQoE_NQ0wCLcBGAs/s1600/tvescola.png">
+          <source
+             src="https://video-rvd-pe-cdc-gw-2-1.rnp.br/live/ocp(t(FlFjQ7hbJo4)r(fVR9ug)a(itsu7A)p(d(2xc)k(q8M)m(BmvQ8I71sl3tvzujTHx0uQ)n(a(WDVXWA)s(Nvs)'a(bRQU-Q)s(qBA)))s(s(0Lk)b(Bbt_gCEeCuIr5ni40nDhixKInVUtQPFzGbXJQrXB9FqwMiEWI0dMgWXuzQSStNN4S5JJlFfg2L6k537hJw)'s(GKI)b(d9T20Cu9GLOmlyqqfXi7vy9h_DzIadTua-Ab-Ncp9Qvn1yrC0iIRK5P1U_37nIegMOlJfL0uIskkGHCPn8tCvcy0H-_a0LE5azAgChkb)'s(wic)b(3AMBctX3))m(0))/tvescola_index.m3u8"
+             type="application/x-mpegURL">
+        </video>
+    <!--------------------------------------------------------------------------
+      --                      videojs-contrib-hls setup                       --
+      ------------------------------------------------------------------------!>
+
+    <!--
+      -- Make sure to include the video.js CSS. This could go in
+      -- the <head>, too.
+      -->
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+
+    <!--
+      -- Include video.js and videojs-contrib-hls in your page
+      -->
+
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+    <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
+    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+
+    <!--
+      -- Now, initialize your player. That's it!
+      -->
+    <script>
+      (function(window, videojs) {
+        var player = window.player = videojs('example-video', { playbackRates: [0.5, 1, 1.5, 2]});
+
+        // hook up the video switcher
+        var loadUrl = document.getElementById('load-url');
+        var url = document.getElementById('url');
+        loadUrl.addEventListener('submit', function(event) {
+          event.preventDefault();
+          player.src({
+            src: url.value,
+            type: 'application/x-mpegURL'
+          });
+          return false;
+        });
+      }(window, window.videojs));
+    </script>
+  </body>
+</html>
